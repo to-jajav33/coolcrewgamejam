@@ -22,13 +22,43 @@ GameObject:
   - component: {fileID: 33520623052089804}
   - component: {fileID: 65925456793583190}
   - component: {fileID: 23107009544903482}
+  - component: {fileID: 114324960845262296}
   m_Layer: 0
   m_Name: GroundTile
-  m_TagString: Untagged
+  m_TagString: ObjGroundTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1503705366623632
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4150301149435988}
+  - component: {fileID: 114138788193901544}
+  m_Layer: 0
+  m_Name: EnemySpawn
+  m_TagString: ObjEnemySpawn
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4150301149435988
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1503705366623632}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.01, y: 0.4, z: 0.14763641}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4714520277683092}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4714520277683092
 Transform:
   m_ObjectHideFlags: 1
@@ -38,7 +68,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 4150301149435988}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -95,3 +126,29 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114138788193901544
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1503705366623632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d8bcfb034b6e476a81b3c07bc238fd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ENEMY_TO_GENERATE: 0
+  BUILDING_TO_GENERATE: 0
+  PREFAB_ENEMY_TEST: {fileID: 0}
+  PREFAB_BUILDING_TEST: {fileID: 0}
+--- !u!114 &114324960845262296
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1465946146272656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5a83a280e3b6468c93cc90844b97314, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
