@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour {
 
+	public float waitReleasetime = 0.15f;
 	public Rigidbody ball;
 	private bool isPressed = false;
 
@@ -27,5 +28,14 @@ public class Ball : MonoBehaviour {
 	void OnMouseUp () {
 		isPressed = false;
 		ball.isKinematic = false;
+		StartCoroutine (Release ());
+	}
+
+	IEnumerator Release () {
+		yield return new WaitForSeconds(waitReleasetime);
+
+		// Debug.Log(GetComponent<SpringJoint>());
+
+		Destroy(GetComponent<SpringJoint>().connectedBody);
 	}
 }
