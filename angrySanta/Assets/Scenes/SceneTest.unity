@@ -805,6 +805,16 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 114396829428205078, guid: 2d51dba4633e9448bb058d293880ae00,
+        type: 2}
+      propertyPath: hook
+      value: 
+      objectReference: {fileID: 1108553093}
+    - target: {fileID: 114396829428205078, guid: 2d51dba4633e9448bb058d293880ae00,
+        type: 2}
+      propertyPath: maxDragDistance
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2d51dba4633e9448bb058d293880ae00, type: 2}
   m_IsPrefabParent: 0

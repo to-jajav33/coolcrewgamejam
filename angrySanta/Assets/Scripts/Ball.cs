@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour {
 
+	public float maxDragDistance = 2f;
 	public float waitReleasetime = 0.15f;
 	public Rigidbody ball;
+	public Rigidbody hook;
 	private bool isPressed = false;
 
 	// Use this for initialization
@@ -16,7 +18,13 @@ public class Ball : MonoBehaviour {
 	void Update () {
 		if (isPressed) {
 			Vector3 mouseToCamToBallPos = Camera.main.ScreenToWorldPoint (new Vector3 (Input.mousePosition.x, Input.mousePosition.y, Camera.main.nearClipPlane - ball.position.z));
-			ball.position = (new Vector3(mouseToCamToBallPos.x, mouseToCamToBallPos.y, ball.position.z));
+			mouseToCamToBallPos = new Vector3 (mouseToCamToBallPos.x, mouseToCamToBallPos.y, ball.position.z);
+
+			if (Vector3.Distance (mouseToCamToBallPos, hook.position) > maxDragDistance) {
+				ball.position = hook.position + (mouseToCamToBallPos - hook.position).normalized * maxDragDistance;
+			} else {
+				ball.position = mouseToCamToBallPos;
+			}
 		}
 	}
 
