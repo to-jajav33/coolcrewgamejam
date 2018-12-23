@@ -22,13 +22,10 @@ public class EnemyManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		float x = 0f;
-		float y = 0f;
-
 		if (ENEMY_TO_GENERATE > 0) {
 			switch (ENEMY_TO_GENERATE) {
 			case AvailableEnemiesEnum.TEST:
-				Instantiate(PREFAB_ENEMY_TEST, new Vector3(x, y, 0), Quaternion.identity);
+				Instantiate(PREFAB_ENEMY_TEST, transform.position, Quaternion.identity);
 				break;
 			case AvailableEnemiesEnum.NONE:
 			default:
