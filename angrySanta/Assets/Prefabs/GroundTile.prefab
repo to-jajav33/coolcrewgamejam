@@ -66,7 +66,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1465946146272656}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 7.26, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4150301149435988}
@@ -139,8 +139,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ENEMY_TO_GENERATE: 0
   BUILDING_TO_GENERATE: 0
-  PREFAB_ENEMY_TEST: {fileID: 0}
-  PREFAB_BUILDING_TEST: {fileID: 0}
+  listOfEnemies:
+  - {fileID: 1273967290715450, guid: 0042610bc442b4316b2449649c3b121b, type: 2}
+  listOfBuildings:
+  - {fileID: 1273967290715450, guid: 0042610bc442b4316b2449649c3b121b, type: 2}
 --- !u!114 &114324960845262296
 MonoBehaviour:
   m_ObjectHideFlags: 1

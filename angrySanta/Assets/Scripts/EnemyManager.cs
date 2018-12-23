@@ -11,34 +11,36 @@ public class EnemyManager : MonoBehaviour {
 	}
 	public enum AvailableBuildings {
 		NONE,
-		TEST
+		TEST,
+		TWO_HOUSES_W_GARAGE,
+		TWO_DETACHED_HOUSES_NO_GARAGE,
+		THREE_HOUSES_W_GARAGE,
+		TWO_DETACHED_HOUSES_NO_GARAGE2,
+		THREE_DETACHED_HOUSES_W_GARAGE2,
+		FOUR_DETACHED_HOUSES_W_GARAGE2,
 	}
 	public AvailableEnemiesEnum ENEMY_TO_GENERATE = 0;
 	public AvailableBuildings BUILDING_TO_GENERATE = 0;
 
-	public GameObject PREFAB_ENEMY_TEST;
-	public GameObject PREFAB_BUILDING_TEST;
+
+
+	[SerializeField]
+	public List<GameObject> listOfEnemies;
+	[SerializeField]
+	public List<GameObject> listOfBuildings;
 
 
 	// Use this for initialization
 	void Start () {
-		if (ENEMY_TO_GENERATE > 0) {
-			switch (ENEMY_TO_GENERATE) {
-			case AvailableEnemiesEnum.TEST:
-				Instantiate(PREFAB_ENEMY_TEST, transform.position, Quaternion.identity);
-				break;
-			case AvailableEnemiesEnum.NONE:
-			default:
-				break;
-			}
-		} else if (BUILDING_TO_GENERATE > 0) {
-			switch (BUILDING_TO_GENERATE) {
-			case AvailableBuildings.TEST:
-				break;
-			case AvailableBuildings.NONE:
-			default:
-				break;
-			}
+		int selectedEnemyInt = (int)ENEMY_TO_GENERATE;
+		int selectedBuildingInt = (int)BUILDING_TO_GENERATE;
+
+		if (((int)selectedEnemyInt > 0) && (selectedEnemyInt <= listOfEnemies.Count)) {
+			// MINUS ON SINCE ENUM USES 0 AS NONE.
+			Instantiate(listOfEnemies[selectedEnemyInt - 1], transform.position, Quaternion.identity);
+		} else if ((selectedBuildingInt > 0) && (selectedBuildingInt <= listOfBuildings.Count)) {
+			// MINUS ON SINCE ENUM USES 0 AS NONE.
+			Instantiate(listOfBuildings[selectedBuildingInt - 1], transform.position, Quaternion.identity);
 		}
 	}
 
