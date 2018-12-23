@@ -37,5 +37,6 @@ public class Ball : MonoBehaviour {
 		// Debug.Log(GetComponent<SpringJoint>());
 
 		Destroy(GetComponent<SpringJoint>().connectedBody);
+		this.enabled = false;
 	}
 }
